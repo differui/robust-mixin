@@ -1,0 +1,22 @@
+{
+  "name": "robust-mixin",
+  "version": "0.0.1",
+  "description": "mixin with pre- & post- process",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/differui/robust-mixin.git"
+  },
+  "keywords": [
+    "mixin"
+  ],
+  "author": "BinRui.Guan <differui@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/differui/robust-mixin/issues"
+  },
+  "homepage": "https://github.com/differui/robust-mixin#readme"
+}
