@@ -2,7 +2,7 @@ function isFunction (src) {
     return typeof src === 'function';
 }
 
-function toArray() {
+function toArray(target, start) {
     start = start || 0
 
     var i = target.length - start;
