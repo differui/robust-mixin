@@ -15,7 +15,7 @@ function toArray(target, start) {
     return result;
 }
 
-function each (target, callback, context) {
+function eachArray (target, callback, context) {
     var i = 0;
     var len = target.length;
     var result = null;
@@ -29,15 +29,23 @@ function each (target, callback, context) {
     }
 }
 
+function eachMap (target, callback, context) {
+    const keys = target ? Object.keys(target) : [];
+
+    eachArray(keys, function (key) {
+        return callback.call(context || null, key, target[key], target);
+    });
+}
+
 function extend (dest) {
     var srcList = toArray(arguments, 1);
 
-    each(srcList, function (src) {
+    eachArray(srcList, function (src) {
         if (!src || typeof src !== 'object') {
             return;
         }
 
-        mapEach(src, function (key, value, src) {
+        eachMap(src, function (key, value, src) {
             if (src.hasOwnProperty(src, key)) {
                 dest[key] = src[key];
             }
@@ -53,7 +61,7 @@ module.exports = function (dest, opts) {
     // cache last opts
     dest.opts = opts = opts || {};
 
-    each(mixins, function (mixin) {
+    eachArray(mixins, function (mixin) {
         var mixinCopy = null;
 
         // pre mix
