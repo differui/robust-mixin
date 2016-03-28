@@ -58,6 +58,10 @@ function extend (dest) {
 module.exports = function (dest, opts) {
     var mixins = toArray(arguments, 2);
 
+    if (Array.isArray(mixins[0])) {
+        mixins = mixins[0];
+    }
+
     // cache last opts
     dest.opts = opts = opts || {};
 

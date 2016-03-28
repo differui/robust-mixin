@@ -1,6 +1,6 @@
 {
   "name": "robust-mixin",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "mixin with pre- & post- process",
   "main": "index.js",
   "scripts": {
